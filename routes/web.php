@@ -15,6 +15,6 @@ use App\Http\Controllers\PostController;
 */
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::resource('items', PostController::class);
+Route::resource('/posts', PostController::class);
 //Route::get('/home','HomeController@home' )->name('home');
 //Route::get('/about','HomeController@about' )->name('about');
