@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,23 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/posts/{id}/{author?}',function($id,$author = 'admin'){
-
-    $posts=[
-        1 => ['title' => 'learn java'],
-        2 => ['title' => 'leran art ']
-    ];
-    return view('posts.show',[
-        'data' => $posts[$id],
-        'author' => $author
-    ]);
-
-});
-
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::resource('items', PostController::class);
+//Route::get('/home','HomeController@home' )->name('home');
+//Route::get('/about','HomeController@about' )->name('about');
