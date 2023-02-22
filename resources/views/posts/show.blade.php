@@ -1,7 +1,9 @@
 @extends('layout')
 
 @section('content')
-
-<h1>{{ $data['title'] }} </h1>
-<h2>{{ $author }}</h2>
+    <h1> {{$post->title}}</h1>
+    <p>{{$post->content}}</p>
+    <em>{{$post->created_at}}</em>
+    <span>{{$post->active}}</span>
+        
 @endsection
