@@ -9,4 +9,7 @@
 <body>
     @yield('content')
 </body>
+<footer>
+    <p>its my first laravel web site ; ZAGAOUCH ilyas</p>
+</footer>
 </html>
