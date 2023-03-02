@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
-<form method="" action="">
+<form method="post" action="{{ route('posts.store') }}">
+    @csrf
     <div>
         <label for="title">Your title</label>
         <input id="title" name="title" type="text">
