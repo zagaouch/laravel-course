@@ -35,8 +35,8 @@ public function store(Request $request){
     $post->slug=Str::slug($post->title, '-');
     $post->active=false;
     $post->save();
+    return redirect('/posts');
 
-    dd('ok');
 }
 
 }
