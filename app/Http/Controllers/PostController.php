@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Post;
 use Illuminate\View\View;
-
+use Illuminate\Support\Str;
 class PostController extends Controller
 {
     /**
@@ -28,7 +28,13 @@ class PostController extends Controller
 public function create(){
 return view('posts.create');
 }
-public function store(){
+public function store(Request $request){
+    $post = new Post();
+    $post->title = $request->input('title');
+    $post->content = $request->input('content');
+    $post->slug=Str::slug($post->title, '-');
+    $post->active=false;
+    $post->save();
 
     dd('ok');
 }
