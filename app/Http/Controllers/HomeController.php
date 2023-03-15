@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+// lose the control
+// come back
 class HomeController extends Controller
 {
     //
