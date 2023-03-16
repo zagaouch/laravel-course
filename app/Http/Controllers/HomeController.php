@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 // lose the control
 // come back
 // come ba
-// come back
+// come ba
 class HomeController extends Controller
 {
     //
